@@ -1,0 +1,4 @@
+__pycache__/
+*.py[cod]
+
+Test_task/db.sqlite3

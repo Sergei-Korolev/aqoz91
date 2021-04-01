@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="detail/">Data page</a>
+    <h3>My Form</h3>
+    <form action="/" method="post" id="123">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit", name="save", value="save", id="bttn_sub">Save</button>
+        <input type="button" value="Add More", onclick="add_element();">
+    </form>
+    <script src="{% static 'dynamic_input_form/script.js' %}">
+    </script>
+
+</body>
+</html>

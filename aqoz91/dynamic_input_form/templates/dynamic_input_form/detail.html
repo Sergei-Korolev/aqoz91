@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="/">Main Page</a>
+    <br>
+    <br>
+
+    {% for item in data %}
+    <table border="4">
+        <caption>Table_id = {{ item.id }}</caption>
+        <tr>
+            <th>id</th>
+
+            {% for key in item.all_names %}
+            <th>{{ key }}</th>
+            {% endfor %}
+
+        </tr>
+        <tr>
+            <td>{{ item.id }}</td>
+
+            {% for values in item.all_names.values %}
+            <td>{{ values }}</td>
+            {% endfor %}
+
+            <td><a href="{% url 'delete_item' id=item.id %}">Delete</a></td>
+        </tr>
+    </table>
+    <br>
+    {% endfor %}
+
+</body>
+</html>
