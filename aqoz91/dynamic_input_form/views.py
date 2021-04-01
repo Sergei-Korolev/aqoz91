@@ -41,7 +41,6 @@ class NamesView(ListView):
 
 def detail(request):
     data = Names.objects.all()
-    print(data)
     keys = {}
     for i in data:
         keys = i.all_names.values
