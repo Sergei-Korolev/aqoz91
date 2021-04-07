@@ -37,11 +37,7 @@ class NamesView(ListView):
 
 def detail(request):
     data = Names.objects.all()
-    keys = {}
-    for i in data:
-        keys = i.all_names.values
-    context = {'data': data, 'keys': keys}
-    return render(request, 'dynamic_input_form/detail.html', context)
+    return render(request, 'dynamic_input_form/detail.html', {'data': data})
 
 
 def delete_item(request, id):
