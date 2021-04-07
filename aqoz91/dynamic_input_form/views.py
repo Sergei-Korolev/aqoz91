@@ -27,10 +27,6 @@ def index(request):
             except:
                 form.add_error(None, 'Ошибка добавления данных')
 
-    else:
-        form = InputForm()
-
-    form = InputForm()
     return render(request, 'dynamic_input_form/index.html', {'form': form})
 
 
